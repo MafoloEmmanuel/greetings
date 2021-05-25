@@ -1,18 +1,21 @@
-var theName = document.querySelector(".nameTextBox");
-var theGreetBtn = document.querySelector(".greetNameBtn");
-var myGreetings = document.querySelector('.myGreetings');
-var greetRadios = document.querySelector('.languageRadioName');
-var theLanguages = document.querySelector('.languages')
-var theGreetMe = theGreetExercise();
+//get the reference to the textbox
+var nameText = document.querySelector(".nameTextBox");
+//get the reference to the greet button
+var greetBtn = document.querySelector(".greetNameBtn");
+//get the reference to the message to be displayed
+var theGreetings = document.querySelector(".myGreetings");
+//get reference to the counter
+var myCount = document.querySelector('.counter');
+//get reference to all the radio buttons
+var myRadio = document.querySelector('.languageRadioName');
 
-function greetMe(){
-
-    var nameText = theName.value;
- // var nameRadio = document.querySelector("input[name='languageRadio']:checked");
-   // theGreetMe.greetingsLanguage(nameRadio);
-    theGreetMe.greet(nameText);
-    myGreetings.innerHTML = theGreetMe.greet(nameText);
-// theLanguages.innerHTML = theGreetMe.greetingsLanguage(nameRadio);
+var greet = greetingEvent();
+function myGreetings(){
+var inputRadio = document.querySelector("input[name='languageRadio']:checked");
+var inputName = nameText.value;
+greet.greetings(inputRadio, inputName);
+  theGreetings.innerHTML = greet.greetings(inputRadio, inputName);
+  myCount.innerHTML = greet.nameCounter();
 
 }
-theGreetBtn.addEventListener('click', greetMe)
+greetBtn.addEventListener('click', myGreetings);

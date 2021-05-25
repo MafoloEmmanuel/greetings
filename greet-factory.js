@@ -1,34 +1,23 @@
-function theGreetExercise(){
-/*
+function greetingEvent(){
+   var count=0
 
-    function greetEnglish(name){
-    return 'Hello, '+ name;
+   function greetings(name, myLanguage){
+    if(myLanguage=== "english"){
+        return 'Hello, '+ name;
+    } else if(myLanguage==='sepedi'){
+        return 'Dumelo, '+ name;
+    } else if(myLanguage==='zulu'){
+        return 'Sawubona, '+ name;
     }
-    function greetSepedi(name){
-        return 'Dumela, '+ name;
+   }
+    function nameCounter(){
+        if(greetings()){
+            return count;
         }
-    function greetZulu(name){
-            return 'Molo, '+ name;
-            }
-
-    function greetingsLanguage(myLanguage){
-        if(myLanguage=== "English"){
-            return greetEnglish();
-        } else if(myLanguage=== "Sepedi"){
-            return greetSepedi();
-        } else if(myLanguage=== "Zulu"){
-            return greetZulu();
-        }
-    }*/
-    function greet(name){
-        return 'Hello, ' + name;
     }
     return {
-        greet,
-       // greetEnglish,
-       // greetSepedi,
-      //  greetZulu,
-      // greetingsLanguage
+        greetings,
+        nameCounter
     }
-
+      
 }
