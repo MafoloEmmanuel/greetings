@@ -13,9 +13,11 @@ var greet = greetingEvent();
 function myGreetings(){
 var inputRadio = document.querySelector("input[name='languageRadio']:checked");
 var inputName = nameText.value;
-greet.greetings(inputRadio, inputName);
-  theGreetings.innerHTML = greet.greetings(inputRadio, inputName);
-  myCount.innerHTML = greet.nameCounter();
+if(inputRadio){
+theGreetings.innerHTML= greet.getNameAndLanguage(inputName, inputRadio.value);
+greet.setName(inputName);
+myCount.innerHTML = greet.getCounter();
+}
 
 }
 greetBtn.addEventListener('click', myGreetings);

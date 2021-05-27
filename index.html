@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Greetings</title>
     <link rel="stylesheet" href="greet.css">
 </head>
+
 <body>
-    <div class="container box">
-    <div class="heading">
-        <h3>Greeting</h3>
+    <div class="container">
+        <div class="heading">
+            <h3><strong>G R E E T I N G S</strong> </h3>
+        </div>
+        <div class="textBox">
+            <label for="">Name</label>
+            <input type="text" name="" value="" placeholder="please enter a name" class="nameTextBox" size="50">
+            <span class="counter">0</span>
+        </div>
+
+        <div class="radioButtons">
+            <label>
+                <input type="radio" name="languageRadio" class="languageRadioName" value="english">
+                <span class="languages">English</span>
+            </label>
+            <label>
+                <input type="radio" name="languageRadio" class="languageRadioName" value="sepedi">
+                <span class="languages">Sepedi</span>
+            </label>
+            <label>
+                <input type="radio" name="languageRadio" class="languageRadioName" value="zulu">
+                <span class="languages">IsiZulu</span>
+            </label>
+        </div>
+        <div class="greetingsButton">
+            <button class="greetNameBtn" type="button" name="button">Greet Me</button>
+        </div>
+        <div class="greetMessage">
+            <strong><span class="myGreetings"></span></strong>
+        </div>
+
     </div>
-    <div class="names">
-        <label for="">Name</label>
-        <input type="text" name="" value="" placeholder="please enter a name" class="nameTextBox">
-        <span class="counter">0</span>
-    </div>
-    
-    <div class="main">
-        <label class="">
-        <input type="radio" name="languageRadio" class="languageRadioName"  value="english">
-        <span class="languages">English</span>
-        </label>
-        <label class="">
-        <input type="radio" name="languageRadio" class="languageRadioName" value="sepedi">
-        <span class="languages">Sepedi</span>
-        </label>
-        <label class="">
-        <input type="radio" name="languageRadio" class="languageRadioName" value="zulu">
-        <span class="languages">IsiZulu</span>
-        </label>
-    </div>
-    <div class="btn"> 
-        <button class="greetNameBtn" type="button" name="button" >Greet Me</button>  
-    </div>
-    <div class="greet">
-     <strong><span class="myGreetings"></span></strong>
-    </div>
-   
-    </div>
-    
+
 </body>
 <script src="greet-factory.js"></script>
 <script src="greet.js"></script>
+
 </html>

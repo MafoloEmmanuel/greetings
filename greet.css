@@ -1,23 +1,47 @@
 body {
-    background-color: rgba(238, 171, 149, 0.932);
+    background-color: rgb(66, 150, 139);
+    display: flex;
+    justify-content: center;
+    padding: 200px;
+}
+.container {
+    background-color: rgb(9, 92, 92);
     margin: 0;
-    height: auto;
+    padding: 10px;
+    border: 1px solid lightblue;
     box-sizing: border-box;
-    width: 100%;
+    position: relative;
+    width: 50%;
+    max-height: 90%;
+    text-align: center;
+
+}
+.radioButtons{
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    
+}
+.greetingsButton{
+    padding:10px
+}
+.greetNameBtn , .nameTextBox{
+    border-radius:5em;
+}
+.counter{
+    padding: 10px;
+   color: white;
+}
+.myGreetings{
+    text-transform: capitalize;
+    padding: 10px;
+}
+.textBox  {
+    padding: 30px;
 }
 .heading{
-text-align: center;
-padding: 10px;
-}
-.container{
+    padding: 10px;
+    background-color: white;
     text-align: center;
-    margin: 0;
-    padding: 10px;
-    
-    
-}
-.main,.btn,.greet
-{
-    padding: 10px;
 }
 
