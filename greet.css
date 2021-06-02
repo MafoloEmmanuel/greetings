@@ -25,7 +25,7 @@ body {
 .greetingsButton{
     padding:10px
 }
-.greetNameBtn , .nameTextBox{
+.greetNameBtn , .nameTextBox, .resetButton{
     border-radius:5em;
 }
 .counter{
@@ -44,4 +44,6 @@ body {
     background-color: white;
     text-align: center;
 }
-
+.nameWarning, .languageWarning{
+    color:red;
+}
