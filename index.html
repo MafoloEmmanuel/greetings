@@ -11,47 +11,50 @@
 
 <body>
     <div class="container">
-        <div class="heading">
-            <h3><strong>G R E E T I N G S</strong> </h3>
-        </div>
-        <div>
-            <span class="nameWarning"></span>
+        <div class="row">
+            <div class="col-12">
+                <div class="col-8 ">
+                    <h3><strong>G R E E T I N G S</strong> </h3>
+                </div>
+                <div class="col-8">
+                        <div><span class="nameWarning"></span></div>
 
-        </div>
-        <div class="textBox">
-           
-            <input type="text" name="" value="" placeholder="please enter a name" class="nameTextBox" size="40">
-            <span class="counter">0</span>
-        </div>
-        <div>
-            <span class="languageWarning"></span>
-        </div>
-        <div class="radioButtons">
-            <label>
-                <input type="radio" name="languageRadio" class="languageRadioName" value="english">
-                <span class="languages">English</span>
-            </label>
-            <label>
-                <input type="radio" name="languageRadio" class="languageRadioName" value="sepedi">
-                <span class="languages">Sepedi</span>
-            </label>
-            <label>
-                <input type="radio" name="languageRadio" class="languageRadioName" value="zulu">
-                <span class="languages">IsiZulu</span>
-            </label>
-        </div>
-        <div class="greetingsButton">
-            <button class="greetNameBtn" type="button" name="button">Greet Me</button>
-            <button class="resetButton" type="button" name="button">Reset counter</button>
+                        <input type="text" name="" value="" placeholder="please enter a name" class="nameTextBox"
+                            size="40">
+                         <span class="counter">0</span>
+                    
+                </div>
+                <div class="col-8">
 
-        </div>
-        <div class="greetMessage">
-            <strong><span class="myGreetings"></span></strong>
-        </div>
+                    <div><span class="languageWarning"></span></div>
 
+                    <label>
+                        <input type="radio" name="languageRadio" class="languageRadioName" value="english">
+                        <span class="languages">English</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="languageRadio" class="languageRadioName" value="sepedi">
+                        <span class="languages">Sepedi</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="languageRadio" class="languageRadioName" value="zulu">
+                        <span class="languages">IsiZulu</span>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <button class="greetNameBtn" type="button" name="button">Greet Me</button>
+                    <button class="resetButton" type="button" name="button">Reset counter</button>
+
+                </div>
+                <div class="col-8">
+                    <strong><span class="myGreetings"></span></strong>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
+<script src="localStorage.js"></script>
 <script src="greet-factory.js"></script>
 <script src="greet.js"></script>
 

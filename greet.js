@@ -11,24 +11,23 @@ var myRadio = document.querySelector('.languageRadioName');
 var nameWarning = document.querySelector('.nameWarning');
 var languageWarning = document.querySelector('.languageWarning');
 
+var storedGreet = getStoredNames();
+var greet = greetingEvent(storedGreet);
+//var myCounter = 0;
+myCount.innerHTML = greet.getCounter();
 
-var greet = greetingEvent();
-var myCounter = 0;
-
-if(localStorage.getItem("nameList")){
-    myCounter = Number(localStorage["nameList"]);
-    nameList = JSON.parse(localStorage["nameList"].length);
+/*
+if(localStorage.getItem("name")){
+    myCounter = Number(localStorage["name"]);
+    nameList = JSON.parse(localStorage["name"].length);
 
     myCount.innerHTML = nameList;
-}
+}*/
+//console.log(storedGreet)
 function myGreetings() {                                 
     var inputRadio = document.querySelector("input[name='languageRadio']:checked");
     var inputName = nameText.value;
     var regExp =/^[a-zA-Z]{3,15}$/gi;
-    var myCounter = 0;
-
-
-
     if (!inputRadio) {
         return languageWarning.innerHTML = "Please select a language!";
     } else if (!inputName) {
@@ -47,15 +46,8 @@ function myGreetings() {
             greet.setName(inputName);
             myCount.innerHTML = greet.getCounter();
 
-            var nameList ;
-            myCounter++;
-          
-            localStorage.setItem("name", nameList)         
-            localStorage.setItem("name", JSON.stringify(nameList)); 
-          //  nameList = JSON.parse(localStorage["nameList"]);
-            myCounter = localStorage["nameList"];
-            // myCount.innerHTML = nameList;
-       
+            myStoreGreetedNames(greet.getName()) || [];
+            getStoredNames();
         }
     }
 
