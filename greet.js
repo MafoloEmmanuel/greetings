@@ -10,20 +10,15 @@ var myCount = document.querySelector('.counter');
 var myRadio = document.querySelector('.languageRadioName');
 var nameWarning = document.querySelector('.nameWarning');
 var languageWarning = document.querySelector('.languageWarning');
+var names;
 
-var storedGreet = getStoredNames();
-var greet = greetingEvent(storedGreet);
-//var myCounter = 0;
+//retrieve the names stored from the local storage
+if(localStorage["greetPeople"]){
+    names = JSON.parse(localStorage.getItem("greetPeople"));
+}
+var greet = GreetingEvent(names);
 myCount.innerHTML = greet.getCounter();
 
-/*
-if(localStorage.getItem("name")){
-    myCounter = Number(localStorage["name"]);
-    nameList = JSON.parse(localStorage["name"].length);
-
-    myCount.innerHTML = nameList;
-}*/
-//console.log(storedGreet)
 function myGreetings() {                                 
     var inputRadio = document.querySelector("input[name='languageRadio']:checked");
     var inputName = nameText.value;
@@ -44,12 +39,15 @@ function myGreetings() {
 
             theGreetings.innerHTML = greet.getNameAndLanguage(inputName, inputRadio.value);
             greet.setName(inputName);
+            // store the names in the local storage
+            localStorage.setItem("greetPeople", JSON.stringify(greet.getName()));  
+          
             myCount.innerHTML = greet.getCounter();
 
-            myStoreGreetedNames(greet.getName()) || [];
-            getStoredNames();
+           console.log(typeof (greet.getName()))
+           
         }
     }
-
+    
 }
 greetBtn.addEventListener('click', myGreetings);

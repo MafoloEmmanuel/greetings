@@ -121,7 +121,6 @@ body {
   .container {
     display: block;
     width: 100%;
-    float: left;
   }
 }
 @media  screen and (min-width: 800px) { 
