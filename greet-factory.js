@@ -1,5 +1,5 @@
 function GreetingEvent(greetedList) {
-    var greetedNames =greetedList || {};
+    var greetedNames =greetedList || [];
     function getNameAndLanguage(name, myLanguage) {
         if (myLanguage === "english") {
             return "Hello, " + name;
@@ -10,20 +10,21 @@ function GreetingEvent(greetedList) {
         }
     }
     function setName(userName) {
-        if (greetedNames[userName] === undefined) {
+        if (!greetedNames.includes(userName)) {
            // greetingsCounter++;
             //add an entry for the user that was greeted in the Object Map
-            greetedNames[userName] = 0;
+            console.log(greetedNames)
+            greetedNames.push(userName) ;
         }
     }
     function getName(){
-        console.log(greetedNames)
+       // console.log(greetedNames)
         return greetedNames;
     }
     function getCounter() {
-        console.log(Object.keys(greetedNames));
+        console.log(greetedNames);
 
-        return Object.keys(greetedNames).length //get the keys from our object to return the names of people from the list
+        return greetedNames.length //get the keys from our object to return the names of people from the list
     }
     
     return {
