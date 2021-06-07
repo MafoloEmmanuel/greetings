@@ -11,11 +11,13 @@ function GreetingEvent(greetedList) {
     }
     function setName(userName) {
         if (!greetedNames.includes(userName)) {
-           // greetingsCounter++;
             //add an entry for the user that was greeted in the Object Map
             console.log(greetedNames)
             greetedNames.push(userName) ;
         }
+    }
+    function reset(){
+        greetedNames=[];
     }
     function getName(){
        // console.log(greetedNames)
@@ -31,7 +33,8 @@ function GreetingEvent(greetedList) {
         getNameAndLanguage,
         setName,
         getCounter,
-        getName
+        getName,
+        reset
     }
     
 }
