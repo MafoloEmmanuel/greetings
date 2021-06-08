@@ -5,57 +5,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greetings</title>
+    <title>Greetings Project</title>
     <link rel="stylesheet" href="greet.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="col-8 heading">
-                    <h1><strong>G R E E T I N G S</strong> </h1>
-                </div>
-                <div class="col-8">
-                        <div><span class="nameWarning"></span></div>
+        <div class="heading">
+            <h1>G R E E T I N G S</h1>
+        </div>
+        <div class="warning"><span class="warningMessage"></span></div>
+        <div class="textBox">
 
-                        <input type="text" name="" value="" placeholder="please enter a name" class="nameTextBox"
-                            size="40">
-                            
-                         <span class="counter">0</span>
-                    
-                </div>
-                <div class="col-8">
+            <input type="text" name="" value="" placeholder="please enter a name" class="nameTextBox" size="40">
 
-                    <div><span class="languageWarning"></span></div>
+            <span class="counter">0</span>
 
-                    <label>
-                        <input type="radio" name="languageRadio" class="languageRadioName" value="english">
-                        <span class="languages">English</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="languageRadio" class="languageRadioName" value="sepedi">
-                        <span class="languages">Sepedi</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="languageRadio" class="languageRadioName" value="zulu">
-                        <span class="languages">IsiZulu</span>
-                    </label>
-                </div>
-                <div class="col-8">
-                    <button class="greetNameBtn" type="button" name="button" >Greet Me</button>
-                    <button class="resetButton" type="button" name="button">Reset counter</button>
+        </div>
+        <div class="radioButtons">
+            <label>
+                <input type="radio" name="languageRadio" class="languageRadioName" value="english">
+                <span class="languages">English</span>
+            </label>
+            <label>
+                <input type="radio" name="languageRadio" class="languageRadioName" value="sepedi">
+                <span class="languages">Sepedi</span>
+            </label>
+            <label>
+                <input type="radio" name="languageRadio" class="languageRadioName" value="zulu">
+                <span class="languages">Isizulu</span>
+            </label>
+        </div>
+        <div class="clickButtons">
+            <button class="greetNameBtn" type="button" name="button">Greet Me</button>
+            <button class="resetButton" type="button" name="button">Reset counter</button>
 
-                </div>
-                <div class="col-8">
-                    <strong><span class="myGreetings"></span></strong>
-                </div>
-            </div>
+        </div>
+        <div class="message">
+            <strong><span class="myGreetings"></span></strong>
         </div>
     </div>
 
+
 </body>
-<script src="localStorage.js"></script>
 <script src="greet-factory.js"></script>
 <script src="greet.js"></script>
 

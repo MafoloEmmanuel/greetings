@@ -8,8 +8,7 @@ var theGreetings = document.querySelector(".myGreetings");
 var myCount = document.querySelector('.counter');
 //get reference to all the radio buttons
 var myRadio = document.querySelector('.languageRadioName');
-var nameWarning = document.querySelector('.nameWarning');
-var languageWarning = document.querySelector('.languageWarning');
+var warning = document.querySelector('.warningMessage');
 var reset = document.querySelector(".resetButton")
 
 /*if (localStorage["greetPeople"]) {
@@ -30,23 +29,23 @@ function myGreetings() {
     var inputName = nameText.value;
     var regExp = /^[a-zA-Z]{1,15}$/gi;
     if (!inputRadio) {
-        languageWarning.innerHTML = "Please select a language!";
-        setTimeout(function(){
-        languageWarning.innerHTML = "";
+        warning.innerHTML = "Please select a language!";
+        setTimeout(function () {
+            warning.innerHTML = "";
 
         }, 4000);
     } else if (!inputName) {
-        nameWarning.innerHTML = "Please enter a name!";
-        setTimeout(function(){
-            nameWarning.innerHTML = "";
-            }, 4000);
+        warning.innerHTML = "Please enter a name!";
+        setTimeout(function () {
+            warning.innerHTML = "";
+        }, 4000);
 
     } else if (!inputName.match(regExp)) {
-       
-         nameWarning.innerHTML = "Name must not include numbers or special characters";
-        setTimeout(function(){
-            nameWarning.innerHTML = "";
-            }, 4000);
+
+        warning.innerHTML = "Name must not include numbers or characters";
+        setTimeout(function () {
+            warning.innerHTML = "";
+        }, 4000);
     } else {
         if (inputRadio) {
 
@@ -55,23 +54,36 @@ function myGreetings() {
             //store values in the local storage
             localStorage.setItem("greetPeople", JSON.stringify(greet.getName()));
             myCount.innerHTML = greet.getCounter();
-            setTimeout(function(){
+
+            setTimeout(function () {
                 theGreetings.innerHTML = "";
+
             }, 5000)
 
         }
     }
-    document.getElementsByClassName("sub2").checked = false;  
+   // myRadio.checked = false;
 
+    nameText.value="";
 
 }
+
 myCount.innerHTML = greet.getCounter();
 
 greetBtn.addEventListener('click', myGreetings);
 
 
-reset.addEventListener('click', function(){
+reset.addEventListener('click', function () {
+
     localStorage.removeItem("greetPeople");
     greet.reset();
     myCount.innerHTML = greet.getCounter();
+    myRadio.checked = false;
+
+   // nameText.value="";
+
+    warning.innerHTML = "The counter has been reset to zero!";
+    setTimeout(function () {
+        warning.innerHTML = "";
+    }, 3000);
 })
