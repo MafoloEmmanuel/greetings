@@ -10,13 +10,10 @@ function GreetingEvent(greetedList) {
         }
     }
     function setName(userName) {
-
         var user= userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
-
         if (!greetedNames.includes(user)) {
             //add an entry for the user that was greeted in the Object Map
            // console.log(userName)
-
         console.log(user)
           greetedNames.push(user) ;
         } 
