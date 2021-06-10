@@ -32,22 +32,20 @@ function myGreetings() {
         warning.innerHTML = "Please select a language!";
         setTimeout(function () {
             warning.innerHTML = "";
-
         }, 4000);
     } else if (!inputName) {
         warning.innerHTML = "Please enter a name!";
         setTimeout(function () {
             warning.innerHTML = "";
         }, 4000);
-
     } else if (!inputName.match(regExp)) {
-
         warning.innerHTML = "Name must not include numbers or characters";
         setTimeout(function () {
             warning.innerHTML = "";
         }, 4000);
-    } else {
-        if (inputRadio) {
+    }
+    else {
+        if (inputRadio && inputName.match(regExp)) {
 
             theGreetings.innerHTML = greet.getNameAndLanguage(inputName, inputRadio.value);
             greet.setName(inputName);
@@ -57,31 +55,20 @@ function myGreetings() {
 
             setTimeout(function () {
                 theGreetings.innerHTML = "";
-
             }, 5000)
-
         }
     }
    // myRadio.checked = false;
-
     nameText.value="";
-
 }
-
 myCount.innerHTML = greet.getCounter();
-
 greetBtn.addEventListener('click', myGreetings);
-
-
 reset.addEventListener('click', function () {
-
     localStorage.removeItem("greetPeople");
     greet.reset();
     myCount.innerHTML = greet.getCounter();
     myRadio.checked = false;
-
-   // nameText.value="";
-
+    nameText.value="";
     warning.innerHTML = "The counter has been reset to zero!";
     setTimeout(function () {
         warning.innerHTML = "";

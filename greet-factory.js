@@ -10,11 +10,16 @@ function GreetingEvent(greetedList) {
         }
     }
     function setName(userName) {
-        if (!greetedNames.includes(userName)) {
+
+        var user= userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
+
+        if (!greetedNames.includes(user)) {
             //add an entry for the user that was greeted in the Object Map
-            console.log(greetedNames)
-            greetedNames.push(userName) ;
-        }
+           // console.log(userName)
+
+        console.log(user)
+          greetedNames.push(user) ;
+        } 
     }
     function reset(){
         greetedNames=[];
@@ -25,10 +30,8 @@ function GreetingEvent(greetedList) {
     }
     function getCounter() {
         console.log(greetedNames);
-
-        return greetedNames.length //get the keys from our object to return the names of people from the list
-    }
-    
+        return greetedNames.length 
+    } 
     return {
         getNameAndLanguage,
         setName,
